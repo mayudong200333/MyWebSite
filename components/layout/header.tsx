@@ -2,8 +2,12 @@ import { Disclosure} from '@headlessui/react'
 import { Bars3Icon,XMarkIcon } from '@heroicons/react/24/outline'
 import { useSession, signIn, signOut } from "next-auth/react"
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { useEffect,useState } from 'react';
 import produce from 'immer';
+import {FaGithub} from "react-icons/fa";
+import { AiOutlineLinkedin } from "react-icons/ai";
+import { IconContext } from 'react-icons';
 
 const navigation = [
   { name: 'About me', href: '/', current: false },
@@ -52,16 +56,21 @@ const Header = ()=>{
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <img
-                    className="block h-8 w-auto lg:hidden"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                    alt="Your Company"
-                  />
-                  <img
-                    className="hidden h-8 w-auto lg:block"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                    alt="Your Company"
-                  />
+                  <div className='flex flex-auto mr-3'>
+                  <Link href="https://github.com/mayudong200333">
+                  <IconContext.Provider value={{size:"2.5em",color:"white"}}>
+                      <FaGithub />
+                  </IconContext.Provider>
+                  </Link>
+                  </div>
+
+                  <div className='flex flex-auto mr-3'>
+                  <Link href="https://www.linkedin.com/in/yudongma/">
+                  <IconContext.Provider value={{size:"2.5em",color:"white"}}>
+                      <AiOutlineLinkedin />
+                  </IconContext.Provider>
+                  </Link>
+                  </div>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
@@ -71,7 +80,7 @@ const Header = ()=>{
                         href={item.href}
                         className={classNames(
                           item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'px-3 py-2 rounded-md text-sm font-medium'
+                          'px-3 py-2 rounded-md text-base font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
                       >

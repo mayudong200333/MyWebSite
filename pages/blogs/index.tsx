@@ -1,7 +1,11 @@
+import BlogsOverView from "@/components/blogs/blogsOverview";
+import { Fragment } from "react";
+
+
 export default function BlogsPage() {
     return (
-        <>
-        <h1> This is my Blogs </h1>
-        </>
+        <Fragment>
+            <BlogsOverView />
+        </Fragment>
     )
 } 

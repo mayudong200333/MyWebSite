@@ -33,7 +33,6 @@ const Header = ()=>{
           e.current = e.href.slice(1) === curpath
         })
       });
-      console.log(newNav)
       setNav(newNav);
     },[curpath])
 

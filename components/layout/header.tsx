@@ -4,10 +4,10 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useSession, signIn, signOut } from "next-auth/react"
 
 const navigation = [
-  { name: 'About me', href: '#', current: true },
-  { name: 'Blogs', href: '#', current: false },
-  { name: 'My Projects', href: '#', current: false },
-  { name: 'My Research', href: '#', current: false },
+  { name: 'About me', href: '/', current: true },
+  { name: 'Blogs', href: '/blogs', current: false },
+  { name: 'My Projects', href: '/projects', current: false },
+  { name: 'My Research', href: '/researches', current: false },
 ]
 
 function classNames(...classes:any[]) {

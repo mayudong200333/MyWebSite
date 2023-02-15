@@ -74,7 +74,7 @@ const Header = ()=>{
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navState.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
                         href={item.href}
                         className={classNames(
@@ -84,7 +84,7 @@ const Header = ()=>{
                         aria-current={item.current ? 'page' : undefined}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>

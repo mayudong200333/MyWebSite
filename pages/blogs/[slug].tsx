@@ -2,6 +2,7 @@ import { BlogData, getBlogBySlug, getBlogSlugs } from "@/lib/blog-util"
 import { useRouter } from "next/router"
 import ErrorPage from "next/error";
 import { Fragment } from "react";
+import BlogDetail from "@/components/blogs/blogDetail";
 
 type Props = {
     blog:BlogData
@@ -17,7 +18,7 @@ export default function BlugDetailPage({blog}:Props) {
         <Fragment>
             {router.isFallback
             ?(<h1>Loading...</h1>)
-            :(<h1>{blog.title}</h1>)
+            :(<BlogDetail blog={blog}/>)
             }
         </Fragment>
     )

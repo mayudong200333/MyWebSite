@@ -1,4 +1,3 @@
-import { CalendarIcon, MapPinIcon, UsersIcon } from '@heroicons/react/20/solid'
 import {BlogData} from '../../lib/blog-util';
 import OverviewHeader from './overviewHeader';
 import OverviewItem from './overviewItem';

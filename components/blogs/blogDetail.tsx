@@ -1,5 +1,15 @@
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import Image from "next/image";
 import { BlogData} from "@/lib/blog-util"
+import {PrismLight as SyntaxHighlighter} from "react-syntax-highlighter";
+import atomDark from 'react-syntax-highlighter/dist/cjs/styles/prism/atom-dark';
+import js from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript';
+import py from 'react-syntax-highlighter/dist/cjs/languages/prism/python';
+
+
+SyntaxHighlighter.registerLanguage('javascript',js);
+SyntaxHighlighter.registerLanguage('python',py);
+
 
 type Props = {
     blog:BlogData
@@ -7,7 +17,13 @@ type Props = {
 
 
 export default function BlogDetail({blog}:Props){
-
+    const customRenderers = {
+      code(code:any){
+        const {className,children} = code;
+        const language = className.split('-')[1];
+        return <SyntaxHighlighter style={atomDark} language={language} children={children} />
+      }
+    }
 
     return (
         <div className="relative overflow-hidden bg-white py-16">
@@ -94,7 +110,7 @@ export default function BlogDetail({blog}:Props){
           </div>
           <div className="prose prose-lg prose-indigo mx-auto mt-6 text-gray-500">
             <article className="prose prose-stone">
-            <ReactMarkdown children={blog.content}/>
+            <ReactMarkdown components={customRenderers} children={blog.content}/>
             </article>
           </div>
         </div>

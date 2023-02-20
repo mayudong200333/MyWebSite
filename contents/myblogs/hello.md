@@ -4,15 +4,26 @@ excerpt: This is excerpt of my test Blog
 type: Technical
 readingTime: 1 min
 date: '2023-03-16'
+image: cat.jpg
 ---
 
-NextJS is a **framework for ReactJS**.
+# Welcome my Blog
 
-Wait a second ... a "framework" for React? Isn't React itself already a framework for JavaScript?
+This is my test code.
 
-Well ... first of all, React is a "library" for JavaScript. That seems to be important for some people.
+```js
+const basics = 'Okay, that should not be too difficult actually';
 
-Not for me, but still, there is a valid point: React already is a framework / library for JavaScript. So it's already an extra layer on top of JS.
+function printBasics() {
+  console.log(basics):
+}
+
+printBasics();
+```
+
+```py
+print('Hello World')
+```
 
 ## Why would we then need NextJS?
 
@@ -25,3 +36,5 @@ In this article, we'll dive into the core concepts and features NextJS has to of
 - Rich Data Fetching Capabilities
 - Image Optimization
 - Much More
+
+![This is a cat](/images/blogs/hello/cat.jpg)

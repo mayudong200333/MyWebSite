@@ -8,14 +8,16 @@ type Props = {
 }
 
 export default function OverviewItem({blog}:Props) {
-    const {title,imageUrl,type,excerpt,slug,date,readingTime} = blog; 
+    const {title,image,type,excerpt,slug,date,readingTime} = blog; 
 
     const linkPath = `/blogs/${slug}`
+
+    const imageUrl = `/images/blogs/${slug}/${image}`;
 
     return (
         <div className="flex flex-col overflow-hidden rounded-lg shadow-lg">
               <div className="flex-shrink-0">
-                <img className="h-48 w-full object-cover" src={imageUrl} alt="Test" />
+                <Image className="h-48 w-full object-cover" src={imageUrl} alt="Test" width={100} height={100}/>
               </div>
               <div className="flex flex-1 flex-col justify-between bg-white p-6">
                 <div className="flex-1">

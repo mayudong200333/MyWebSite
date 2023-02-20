@@ -2,7 +2,7 @@ const HomeHeader:React.FC = () => {
     return (
         <div className="relative isolate overflow-hidden bg-gray-900 py-24 px-6 sm:py-32 lg:px-8">
       <img
-        src="/home/header_section.jpg"
+        src="images/home/header_section.jpg"
         alt=""
         className="absolute inset-0 -z-10 h-full w-full object-cover"
       />

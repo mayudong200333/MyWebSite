@@ -2,6 +2,7 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import Image from "next/image";
 import { BlogData } from "@/lib/blog-util"
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
+import { useSession } from "next-auth/react"
 import atomDark from 'react-syntax-highlighter/dist/cjs/styles/prism/atom-dark';
 import js from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript';
 import py from 'react-syntax-highlighter/dist/cjs/languages/prism/python';
@@ -19,6 +20,8 @@ type Props = {
 
 
 export default function BlogDetail({ blog }: Props) {
+  const {data:session,status} = useSession();
+
   const customRenderers = {
     code(code: any) {
       const { className, children } = code;
@@ -112,7 +115,10 @@ export default function BlogDetail({ blog }: Props) {
           <article className="prose prose-stone ">
             <ReactMarkdown components={customRenderers} children={blog.content} />
           </article>
-          <CommentForm/>
+          {session 
+          ?<CommentForm/>
+          :<p>You should log in to write comment</p>
+          }
           <CommentList/>
         </div>
         

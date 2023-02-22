@@ -9,7 +9,7 @@ const messages = [
         'Doloremque dolorem maiores assumenda dolorem facilis. Velit vel in a rerum natus facere. Enim rerum eaque qui facilis. Numquam laudantium sed id dolores omnis in. Eos reiciendis deserunt maiores et accusamus quod dolor.',
     },
     {
-        id: 1,
+        id: 2,
         subject: 'Velit placeat sit ducimus non sed',
         sender: 'Gloria Roberston',
         time: '1d ago',
@@ -30,7 +30,6 @@ export default function CommentList() {
                         <div className="min-w-0 flex-1">
                                 <span className="absolute inset-0" aria-hidden="true" />
                                 <p className="truncate text-sm font-medium text-gray-900">{message.sender}</p>
-                                <p className="truncate text-sm text-gray-500">{message.subject}</p>
                         </div>
                         <time dateTime={message.datetime} className="flex-shrink-0 whitespace-nowrap text-sm text-gray-500">
                             {message.time}

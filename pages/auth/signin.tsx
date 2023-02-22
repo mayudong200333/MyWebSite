@@ -1,5 +1,6 @@
 import { LockClosedIcon } from "@heroicons/react/20/solid";
 import { FcGoogle } from "react-icons/fc";
+import { SiAuth0 } from "react-icons/si";
 import { BuiltInProviderType } from 'next-auth/providers'
 import { getProviders, getSession, ClientSafeProvider, LiteralUnion, signIn } from "next-auth/react"
 
@@ -110,6 +111,7 @@ export default function SignIn({ providers }: Props) {
             </div>
           </form>
           <div>
+          <div className="w-full max-w-md space-y-3">
             <button
               onClick={() => signIn("google")}
               className="group relative flex w-full justify-center rounded-md border border-transparent bg-slate-100 py-2 px-4 text-sm font-medium text-black hover:bg-slate-200 focus:outline-none focus:ring-2 focus:bg-slate-500 focus:ring-offset-2"
@@ -122,6 +124,19 @@ export default function SignIn({ providers }: Props) {
               </span>
               Sign in with Google
             </button>
+            <button
+              onClick={() => signIn("auth0")}
+              className="group relative flex w-full justify-center rounded-md border border-transparent bg-slate-100 py-2 px-4 text-sm font-medium text-black hover:bg-slate-200 focus:outline-none focus:ring-2 focus:bg-slate-500 focus:ring-offset-2"
+            >
+              <span className="absolute inset-y-0 left-0 flex items-center pl-3">
+                <SiAuth0
+                  className="h-5 w-5"
+                  aria-hidden="true"
+                />
+              </span>
+              Sign in with Auth0
+            </button>
+            </div>
           </div>
         </div>
       </div>
